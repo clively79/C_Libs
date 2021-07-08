@@ -1,3 +1,11 @@
+/*
+	A limited set of input file stream functionality designed to work 
+	within the XV6 Teaching OS environment.
+
+	This Library is not being actively maintained, but anyone wishing
+	to expand on it is welcome to submit a pull request 
+*/
+
 #ifndef TRUE
 #define TRUE 1
 
@@ -19,16 +27,16 @@
 typedef struct ifstream ifstream;
 
 struct ifstream {
-	int REQ;  				// number of chars to read at a time
-	char* i;				// read ahead pointer
-	char* j;				// trailing pointer
-	char* fname;			// name of open file
-	int fd; 				// file descriptor to be assigned by open() function
-	int read;				// number of charecters returned by open() function
-	char buffer[IFS_MAX+1]; // temprorary location to read a buffer of charecters
-	_Bool eof;    			// End of file flag
-	_Bool error; 			// Error state flag
-	_Bool open;				// reports file open and ready.
+	int REQ;  					// number of chars to read at a time
+	char* i;					// read ahead pointer
+	char* j;					// trailing pointer
+	char* fname;				// name of open file
+	int fd; 					// file descriptor to be assigned by open() function
+	int read;					// number of charecters returned by open() function
+	char buffer[IFS_MAX+1]; 	// temprorary location to read a buffer of charecters
+	_Bool eof;    				// End of file flag
+	_Bool error; 				// Error state flag
+	_Bool open;					// reports file open and ready.
 };
 
 /******************************************************
